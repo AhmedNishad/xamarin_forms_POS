@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="POS.Xamarin_Forms.Views.OrderTablePage"
+             Title="{Binding Title}"
+             x:Name="AddOrders">
+    <ContentPage.Content>
+        <StackLayout  HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal">
+                <Button Clicked="ItemRemove" TextColor="White" BackgroundColor="Red" HorizontalOptions="Start" Text="X"/>
+                <Picker SelectedIndexChanged="ProductSelected" FontSize="Large" ItemsSource="{Binding Products}" x:Name="Gender" HorizontalOptions="FillAndExpand">
+                    
+                </Picker>
+                <Entry Keyboard="Numeric" Placeholder="Quantity" TextChanged="AddNewQuantityChanged" />
+                
+                <Button Text="Add" Clicked="AddNew" HorizontalOptions="End"/>
+            </StackLayout>
+            
+            <ListView x:Name="OrderItems"
+                      ItemsSource="{Binding Items}"  
+                      RefreshCommand="{Binding LoadItemsCommand}" 
+                      IsPullToRefreshEnabled="true"
+                      ItemSelected="OnItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell  Height="60">
+                                <StackLayout Spacing="2" Padding="1" Margin="3"  Orientation="Horizontal">
+                                    <Label FontSize="Medium"  Text="{Binding Product.Name}" 
+                                    LineBreakMode="NoWrap" 
+                                     />
+
+                                <Entry Keyboard="Numeric" IsEnabled="False" HeightRequest="2" Text="{Binding Quantity}" TextChanged="Entry_TextChanged"  HorizontalOptions="CenterAndExpand" MaxLength="5" />
+
+                                <Label  Text="{Binding Amount}" 
+                                    LineBreakMode="NoWrap" 
+                                    FontSize="Medium"  />
+                                
+                            </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            <StackLayout Orientation="Horizontal">
+                
+                <Label FontSize="Large" Text="{Binding Total}" />
+                <Button TextColor="White" Clicked="Cashout" BackgroundColor="ForestGreen" Text="Save" HorizontalOptions="End"/>
+            </StackLayout>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,7 @@
+C:\Users\ACER\source\repos\POS\POS._Core\obj\Debug\netstandard2.0\POS._Core.AssemblyInfoInputs.cache
+C:\Users\ACER\source\repos\POS\POS._Core\obj\Debug\netstandard2.0\POS._Core.AssemblyInfo.cs
+C:\Users\ACER\source\repos\POS\POS._Core\bin\Debug\netstandard2.0\POS._Core.deps.json
+C:\Users\ACER\source\repos\POS\POS._Core\bin\Debug\netstandard2.0\POS._Core.dll
+C:\Users\ACER\source\repos\POS\POS._Core\bin\Debug\netstandard2.0\POS._Core.pdb
+C:\Users\ACER\source\repos\POS\POS._Core\obj\Debug\netstandard2.0\POS._Core.dll
+C:\Users\ACER\source\repos\POS\POS._Core\obj\Debug\netstandard2.0\POS._Core.pdb
